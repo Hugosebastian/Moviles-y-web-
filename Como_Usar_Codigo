@@ -1,0 +1,10 @@
+Tener instalado Node.js y Git
+
+En el visual abre una terminal y copia lo siguiente
+git clone https://github.com/Hugosebastian/Moviles-y-web-.git
+
+ahora abre la carpeta moviles-y-web y abre la terminal de esa carpeta copias
+npm install
+
+cuando se termine de instalar copias lo siguiente
+npm run dev
