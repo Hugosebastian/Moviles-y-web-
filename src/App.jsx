@@ -3,14 +3,17 @@ import Login from './Login';
 import Registro from './Registro';
 import Principal from './Principal';
 import Perfil from './Perfil';
+import Carrito from './Carrito'; // NUEVO COMPONENTE
 
 function App() {
   const [vistaActual, setVistaActual] = useState('login');
   const [mostrarRegistro, setMostrarRegistro] = useState(false);
+  
+  // ESTADO GLOBAL DEL CARRITO
+  const [carrito, setCarrito] = useState([]);
 
   return (
     <div>
-      {/* PANTALLA LOGIN */}
       {vistaActual === 'login' && (
         <Login 
           onOpenRegistro={() => setMostrarRegistro(true)}
@@ -18,17 +21,27 @@ function App() {
         />
       )}
 
-      {/* PANTALLA PRINCIPAL */}
       {vistaActual === 'principal' && (
-        <Principal onNavigate={setVistaActual} />
+        <Principal 
+          onNavigate={setVistaActual} 
+          carrito={carrito} 
+          setCarrito={setCarrito} 
+        />
       )}
 
-      {/* PANTALLA PERFIL */}
       {vistaActual === 'perfil' && (
         <Perfil onNavigate={setVistaActual} />
       )}
 
-      {/* MODAL REGISTRO SOBRE LOGIN */}
+      {/* NUEVA VISTA DE CARRITO */}
+      {vistaActual === 'carrito' && (
+        <Carrito 
+          onNavigate={setVistaActual} 
+          carrito={carrito} 
+          setCarrito={setCarrito} 
+        />
+      )}
+
       {mostrarRegistro && vistaActual === 'login' && (
         <Registro onClose={() => setMostrarRegistro(false)} />
       )}
