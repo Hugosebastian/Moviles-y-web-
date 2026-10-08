@@ -1,186 +1,903 @@
-/* 1. CAPA OSCURA DE FONDO (OVERLAY):
-   Cubre el 100% de la ventana sobre el Login y oscurece el fondo */
+* {
+  box-sizing: border-box;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
 .modal-overlay {
-  position: fixed;        /* Se fija respecto a la ventana del navegador */
+  position: fixed;
+
   top: 0;
   left: 0;
-  width: 100vw;           /* Ocupa todo el ancho */
-  height: 100vh;          /* Ocupa todo el alto */
-  background-color: rgba(0, 0, 0, 0.65); /* Fondo negro con 65% de opacidad */
-  backdrop-filter: blur(4px);           /* Opcional: Desenfoca ligeramente el fondo */
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: rgba(0, 0, 0, 0.65);
+
+  backdrop-filter: blur(4px);
+
   display: flex;
-  align-items: center;    /* Centra el modal verticalmente */
-  justify-content: center;/* Centra el modal horizontalmente */
-  z-index: 1000;          /* Asegura que quede por encima del Login */
-  animation: fadeIn 0.3s ease-out;      /* Transición suave al aparecer */
+
+  align-items: center;
+  justify-content: center;
+
+  z-index: 1000;
+
+  animation: fadeIn 0.3s ease-out;
 }
 
-/* 2. TARJETA O VENTANA EMERGENTE (MODAL) */
+
+/* =========================================================
+   TARJETA
+========================================================= */
+
 .registro-card {
   width: 90%;
-  max-width: 850px;       /* Ancho del modal */
-  max-height: 90vh;       /* Si la pantalla es pequeña, no sobrepasa el 90% del alto */
-  overflow-y: auto;       /* Si falta espacio vertical, genera su propio scroll interno */
+
+  max-width: 850px;
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
   background-color: #ffffff;
-  border-radius: 25px;    /* Bordes redondeados */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* Sombra flotante */
+
+  border-radius: 25px;
+
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.4);
+
   position: relative;
-  animation: scaleUp 0.3s ease-out;     /* Animación de apertura */
+
+  animation: scaleUp 0.3s ease-out;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
 }
 
-/* ANIMACIONES */
+
+/* =========================================================
+   ANIMACIONES
+========================================================= */
+
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
 }
+
 
 @keyframes scaleUp {
-  from { transform: scale(0.92); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
+
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+
 }
 
-/* 3. CABECERA NARANJA */
+
+/* =========================================================
+   CABECERA
+========================================================= */
+
 .registro-header {
+
   background-color: #ff6600;
+
   height: 100px;
+
   position: relative;
+
   display: flex;
+
   justify-content: center;
+
   align-items: center;
 }
 
-/* BOTÓN DE CERRAR / FLECHA CERRAR MODAL */
+
+/* =========================================================
+   BOTÓN REGRESAR
+========================================================= */
+
 .close-button-registro {
+
   position: absolute;
+
   top: 15px;
   left: 15px;
+
   width: 32px;
   height: 32px;
+
   border-radius: 50%;
+
   border: 1px solid #000;
+
   background: transparent;
+
   cursor: pointer;
+
   display: flex;
+
   align-items: center;
   justify-content: center;
+
   font-size: 16px;
+
   font-weight: bold;
+
+  transition: 0.2s;
 }
 
-/* CÍRCULO CON EL LOGO SOBRESALIENTE */
+
+.close-button-registro:hover {
+
+  background-color: #000;
+
+  color: #fff;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
 .header-logo-circle {
+
   width: 85px;
   height: 85px;
+
   background-color: #ffffff;
+
   border-radius: 50%;
+
   display: flex;
+
   align-items: center;
   justify-content: center;
+
   position: absolute;
-  bottom: -20px; /* Sobresale un poco hacia abajo */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+  bottom: -20px;
+
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.15);
 }
+
 
 .header-logo-icon {
+
   width: 50px;
   height: 50px;
+
+  object-fit: contain;
 }
 
-/* 4. CUERPO DEL FORMULARIO */
+
+/* =========================================================
+   CUERPO
+========================================================= */
+
 .registro-body {
-  padding: 35px 30px 25px 30px;
+
+  padding:
+    35px 30px 25px 30px;
 }
+
 
 .registro-title {
+
+  margin: 0;
+
   font-size: 28px;
+
   font-weight: 900;
+
   font-style: italic;
+
   color: #000;
+
   line-height: 1;
+
+  text-transform: lowercase;
 }
+
 
 .registro-subtitle {
+
   font-size: 11px;
+
   color: #666;
-  margin-bottom: 20px;
+
+  margin:
+    6px 0 20px 0;
+
+  text-transform: lowercase;
 }
 
-/* ESTRUCTURA DE 2 COLUMNAS CON FLEXBOX */
+
+/* =========================================================
+   ERROR
+========================================================= */
+
+.error-message {
+
+  width: 100%;
+
+  padding: 10px 12px;
+
+  margin-bottom: 15px;
+
+  border-radius: 8px;
+
+  background-color: #ffe5e5;
+
+  border: 1px solid #e00000;
+
+  color: #b00000;
+
+  font-size: 12px;
+
+  font-weight: bold;
+
+  text-transform: lowercase;
+}
+
+
+/* =========================================================
+   DOS COLUMNAS
+========================================================= */
+
 .form-grid {
+
   display: flex;
+
   gap: 30px;
 }
 
+
 .form-column {
+
   flex: 1;
+
+  min-width: 0;
 }
 
+
+/* =========================================================
+   CAMPOS
+========================================================= */
+
 .field-group {
+
   margin-bottom: 12px;
 }
 
+
 .field-group label {
+
   display: block;
+
   font-size: 13px;
+
   font-weight: bold;
+
   color: #000;
-  margin-bottom: 3px;
+
+  margin-bottom: 4px;
+
+  text-transform: lowercase;
 }
+
+
+/* =========================================================
+   INPUTS
+========================================================= */
 
 .field-group input[type="text"],
 .field-group input[type="email"],
 .field-group input[type="password"],
-.field-group input[type="tel"] {
+.field-group input[type="tel"],
+.field-group input[type="date"],
+.field-group select {
+
   width: 100%;
-  padding: 8px 12px;
-  border: 2px solid #ff6600; /* Borde naranja del diseño */
+
+  height: 39px;
+
+  padding:
+    8px 12px;
+
+  border:
+    2px solid #ff6600;
+
   border-radius: 10px;
+
   outline: none;
+
   font-size: 12px;
+
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  background-color: #fff;
+
+  color: #000;
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
 }
 
-/* OPCIONES RADIO (Tipo de perfil) */
-.radio-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+
+.field-group input:focus,
+.field-group select:focus {
+
+  border-color: #e05500;
+
+  box-shadow:
+    0 0 0 2px
+    rgba(255, 102, 0, 0.15);
+}
+
+
+.field-group input::placeholder {
+
+  color: #999;
+
+  text-transform: lowercase;
+}
+
+
+/* =========================================================
+   TEXTO DE AYUDA
+========================================================= */
+
+.field-help {
+
+  display: block;
+
   margin-top: 4px;
+
+  font-size: 10px;
+
+  color: #777;
+
+  text-transform: lowercase;
 }
 
-.radio-label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 13px;
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.field-group select {
+
   cursor: pointer;
 }
 
-.radio-label input[type="radio"] {
-  accent-color: #ff6600; /* Pinta el radio button de naranja */
-  width: 16px;
-  height: 16px;
+
+/* =========================================================
+   CONTRASEÑA
+========================================================= */
+
+.password-container {
+
+  position: relative;
+
+  width: 100%;
 }
 
-/* BOTÓN "REGISTRAR DATOS" */
-.submit-container {
+
+.password-container input {
+
+  padding-right: 45px !important;
+}
+
+
+/* =========================================================
+   BOTÓN OJO
+========================================================= */
+
+.eye-button {
+
+  position: absolute;
+
+  right: 8px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 30px;
+  height: 30px;
+
+  border: none;
+
+  background: transparent;
+
+  cursor: pointer;
+
   display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 15px;
+
+  padding: 0;
+}
+
+
+.eye-button:hover {
+
+  transform:
+    translateY(-50%)
+    scale(1.1);
+}
+
+
+/* =========================================================
+   FECHA
+========================================================= */
+
+.date-container {
+
+  position: relative;
+
+  width: 100%;
+}
+
+
+.field-group input[type="date"] {
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   BOTÓN REGISTRAR
+========================================================= */
+
+.submit-container {
+
+  display: flex;
+
   justify-content: flex-end;
+
   margin-top: 20px;
 }
 
+
 .btn-registrar {
+
   background-color: #ff6600;
+
   color: #000;
+
   border: none;
-  padding: 10px 25px;
+
+  padding:
+    10px 25px;
+
   border-radius: 14px;
+
   font-size: 18px;
+
   font-weight: 800;
+
   cursor: pointer;
+
   transition: all 0.2s;
+
+  text-transform: lowercase;
 }
 
+
 .btn-registrar:hover {
+
   background-color: #e05500;
+
   color: #fff;
+
+  transform: translateY(-1px);
+}
+
+
+.btn-registrar:active {
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   MODALES DE CONFIRMACIÓN Y ÉXITO
+========================================================= */
+
+.confirmation-overlay {
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color:
+    rgba(0, 0, 0, 0.65);
+
+  backdrop-filter: blur(3px);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2000;
+
+  animation:
+    fadeIn 0.2s ease-out;
+}
+
+
+/* =========================================================
+   CONFIRMACIÓN
+========================================================= */
+
+.confirmation-card {
+
+  width: 90%;
+
+  max-width: 380px;
+
+  background-color: #fff;
+
+  border-radius: 20px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  box-shadow:
+    0 10px 35px
+    rgba(0, 0, 0, 0.35);
+
+  animation:
+    scaleUp 0.2s ease-out;
+}
+
+
+.confirmation-icon {
+
+  width: 55px;
+  height: 55px;
+
+  margin:
+    0 auto 15px auto;
+
+  border-radius: 50%;
+
+  background-color: #ff6600;
+
+  color: #000;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+
+  font-weight: bold;
+}
+
+
+.confirmation-card h2 {
+
+  margin:
+    0 0 10px 0;
+
+  font-size: 22px;
+
+  color: #000;
+
+  text-transform: lowercase;
+}
+
+
+.confirmation-card p {
+
+  margin:
+    0 0 25px 0;
+
+  font-size: 13px;
+
+  color: #666;
+
+  line-height: 1.5;
+
+  text-transform: lowercase;
+}
+
+
+/* =========================================================
+   BOTONES CONFIRMACIÓN
+========================================================= */
+
+.confirmation-buttons {
+
+  display: flex;
+
+  justify-content: center;
+
+  gap: 12px;
+}
+
+
+.btn-cancelar,
+.btn-confirmar {
+
+  min-width: 110px;
+
+  padding:
+    10px 18px;
+
+  border-radius: 10px;
+
+  border: none;
+
+  font-size: 13px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  text-transform: lowercase;
+
+  transition: 0.2s;
+}
+
+
+.btn-cancelar {
+
+  background-color: #e5e5e5;
+
+  color: #000;
+}
+
+
+.btn-cancelar:hover {
+
+  background-color: #d0d0d0;
+}
+
+
+.btn-confirmar {
+
+  background-color: #ff6600;
+
+  color: #000;
+}
+
+
+.btn-confirmar:hover {
+
+  background-color: #e05500;
+
+  color: #fff;
+}
+
+
+/* =========================================================
+   ÉXITO
+========================================================= */
+
+.success-card {
+
+  width: 90%;
+
+  max-width: 380px;
+
+  background-color: #fff;
+
+  border-radius: 20px;
+
+  padding: 30px;
+
+  text-align: center;
+
+  box-shadow:
+    0 10px 35px
+    rgba(0, 0, 0, 0.35);
+
+  animation:
+    scaleUp 0.2s ease-out;
+}
+
+
+.success-icon {
+
+  width: 65px;
+  height: 65px;
+
+  margin:
+    0 auto 15px auto;
+
+  border-radius: 50%;
+
+  background-color: #ff6600;
+
+  color: #000;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 35px;
+
+  font-weight: bold;
+}
+
+
+.success-card h2 {
+
+  margin:
+    0 0 10px 0;
+
+  font-size: 22px;
+
+  color: #000;
+
+  text-transform: lowercase;
+}
+
+
+.success-card p {
+
+  margin:
+    0 0 25px 0;
+
+  font-size: 13px;
+
+  color: #666;
+
+  line-height: 1.5;
+
+  text-transform: lowercase;
+}
+
+
+/* =========================================================
+   BOTÓN ÉXITO
+========================================================= */
+
+.btn-exito {
+
+  width: 100%;
+
+  padding: 11px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background-color: #ff6600;
+
+  color: #000;
+
+  font-size: 14px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  text-transform: lowercase;
+
+  transition: 0.2s;
+}
+
+
+.btn-exito:hover {
+
+  background-color: #e05500;
+
+  color: #fff;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 700px) {
+
+  .registro-card {
+
+    width: 95%;
+
+    max-height: 95vh;
+
+    border-radius: 18px;
+  }
+
+
+  .registro-body {
+
+    padding:
+      30px 20px 20px 20px;
+  }
+
+
+  .form-grid {
+
+    flex-direction: column;
+
+    gap: 0;
+  }
+
+
+  .submit-container {
+
+    justify-content: center;
+  }
+
+
+  .btn-registrar {
+
+    width: 100%;
+  }
+
+}
+
+
+@media (max-width: 400px) {
+
+  .registro-title {
+
+    font-size: 24px;
+  }
+
+
+  .registro-header {
+
+    height: 90px;
+  }
+
+
+  .header-logo-circle {
+
+    width: 75px;
+    height: 75px;
+  }
+
+
+  .header-logo-icon {
+
+    width: 45px;
+    height: 45px;
+  }
+
 }
