@@ -1,0 +1,454 @@
+
+/* =====================================
+   PÁGINA DEL PERFIL
+===================================== */
+
+.pf-pagina {
+  min-height: 100vh;
+  background: #f7f7f8;
+  color: #252525;
+  font-family: inherit;
+}
+
+.pf-pagina * {
+  box-sizing: border-box;
+}
+
+.pf-pagina button,
+.pf-pagina input,
+.pf-pagina select {
+  font: inherit;
+}
+
+.pf-pagina button {
+  cursor: pointer;
+}
+
+/* =====================================
+   BARRA SUPERIOR NARANJA
+===================================== */
+
+.pf-navbar {
+  height: 86px;
+  background: #ff6600;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px max(22px, 4vw);
+  color: white;
+}
+
+.pf-navbar button {
+  border: 0;
+}
+
+.pf-volver {
+  border: 1px solid #242424 !important;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  background: transparent;
+  color: #222;
+  font-size: 23px !important;
+}
+
+.pf-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: white;
+  font-size: 24px !important;
+}
+
+.pf-menu {
+  background: transparent;
+  color: white;
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  white-space: nowrap;
+}
+
+.pf-buscador {
+  margin: auto;
+  max-width: 680px;
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  background: white;
+  color: #888;
+  border-radius: 35px;
+  padding: 15px 22px;
+  font-size: 14px !important;
+}
+
+.pf-nav-derecha {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.pf-nav-derecha button {
+  background: transparent;
+  color: white;
+  font-size: 25px !important;
+}
+
+.pf-nav-derecha .pf-perfil-activo {
+  background: white;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+}
+
+/* =====================================
+   CONTENIDO PRINCIPAL
+===================================== */
+
+.pf-contenedor {
+  max-width: 1230px;
+  margin: auto;
+  padding: 34px 25px 90px;
+}
+
+.pf-contenedor > h1 {
+  font-size: 26px;
+  margin: 0 0 26px;
+  font-weight: 700;
+}
+
+.pf-grid {
+  display: grid;
+  grid-template-columns: minmax(250px, 40%) minmax(0, 1fr);
+  gap: 26px;
+  align-items: start;
+}
+
+/* =====================================
+   MENÚ LATERAL
+===================================== */
+
+.pf-lateral h2 {
+  font-size: 17px;
+  margin: 6px 0 13px;
+  font-weight: 700;
+}
+
+.pf-menu-caja {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 16px;
+  padding: 8px 17px;
+  margin-bottom: 30px;
+}
+
+.pf-opcion {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  background: white;
+  border: 0;
+  border-bottom: 1px solid #ececec;
+  padding: 20px 4px;
+  text-align: left;
+  color: #3c3c3c;
+  font-size: 16px;
+}
+
+.pf-opcion:last-child {
+  border-bottom: 0;
+}
+
+.pf-opcion-icono {
+  font-size: 24px;
+  width: 32px;
+  text-align: center;
+  color: #ff6600;
+}
+
+.pf-opcion .pf-chevron {
+  margin-left: auto;
+  font-size: 30px;
+  color: #777;
+  line-height: 1;
+}
+
+.pf-opcion:hover,
+.pf-opcion.pf-activa {
+  color: #df5700;
+  font-weight: 700;
+}
+
+/* =====================================
+   PANEL DERECHO
+===================================== */
+
+.pf-panel {
+  background: white;
+  border: 1px solid #e5e5e5;
+  border-radius: 18px;
+  min-height: 550px;
+  padding: 28px 34px;
+  box-shadow: 0 5px 25px #00000008;
+}
+
+.pf-panel h2 {
+  font-size: 24px;
+  margin: 0 0 25px;
+}
+
+.pf-panel h3 {
+  font-size: 18px;
+  margin: 24px 0 14px;
+}
+
+/* =====================================
+   CAMPOS DE INFORMACIÓN PERSONAL
+===================================== */
+
+.pf-formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.pf-campo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.pf-campo label,
+.pf-formulario > label {
+  font-size: 14px;
+  color: #777;
+}
+
+.pf-valor {
+  border-bottom: 1px solid #d7d7d7;
+  min-height: 32px;
+  padding: 2px 0 9px;
+  font-size: 17px;
+  overflow-wrap: anywhere;
+}
+
+.pf-campo input,
+.pf-campo select,
+.pf-formulario > input {
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid #bbb;
+  border-radius: 0;
+  background: white;
+  padding: 10px 0;
+  font-size: 16px;
+  outline: none;
+  color: #242424;
+}
+
+.pf-campo input:focus,
+.pf-campo select:focus,
+.pf-formulario > input:focus {
+  border-bottom: 2px solid #ff6600;
+}
+
+/* CELULAR CON LÁPIZ */
+
+.pf-telefono-fila {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #bbb;
+  gap: 10px;
+}
+
+.pf-telefono-fila input {
+  border: 0 !important;
+  flex: 1;
+  min-width: 0;
+}
+
+.pf-prefijo {
+  white-space: nowrap;
+}
+
+.pf-lapiz {
+  border: 0;
+  background: white;
+  font-size: 23px !important;
+  color: #555;
+}
+
+/* =====================================
+   BOTONES
+===================================== */
+
+.pf-acciones {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.pf-primario {
+  border: 0;
+  background: #ff6600;
+  color: white;
+  border-radius: 10px;
+  padding: 12px 25px;
+  font-weight: 700 !important;
+}
+
+.pf-primario:hover {
+  background: #df5900;
+}
+
+.pf-secundario {
+  background: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 12px 20px;
+}
+
+.pf-mensaje {
+  background: #fff4e9;
+  border: 1px solid #ffd2aa;
+  padding: 12px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin: 0 0 18px;
+}
+
+.pf-ayuda {
+  color: #777;
+  line-height: 1.5;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+/* =====================================
+   DIRECCIONES
+===================================== */
+
+.pf-direcciones {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.pf-direccion {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  background: #fafafa;
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.pf-direccion > span {
+  font-size: 25px;
+  color: #ff6600;
+}
+
+.pf-direccion p {
+  margin: 5px 0 0;
+  color: #777;
+  font-size: 14px;
+}
+
+/* =====================================
+   TARJETAS
+===================================== */
+
+.pf-dos-columnas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+/* =====================================
+   SEGURIDAD Y ELIMINAR CUENTA
+===================================== */
+
+.pf-peligro {
+  border-top: 1px solid #eee;
+  margin-top: 35px;
+  padding-top: 10px;
+}
+
+.pf-peligro p {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.5;
+}
+
+.pf-eliminar {
+  border: 1px solid #cc2840;
+  background: white;
+  color: #bd233a;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-weight: 700 !important;
+}
+
+.pf-eliminar:hover {
+  background: #fff0f2;
+}
+
+/* =====================================
+   DISEÑO RESPONSIVE
+===================================== */
+
+@media (max-width: 850px) {
+  .pf-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pf-buscador {
+    display: none;
+  }
+
+  .pf-navbar {
+    gap: 10px;
+  }
+
+  .pf-nav-derecha {
+    margin-left: auto;
+  }
+
+  .pf-contenedor {
+    padding: 24px 14px;
+  }
+
+  .pf-panel {
+    padding: 22px 18px;
+  }
+}
+
+@media (max-width: 470px) {
+  .pf-menu {
+    font-size: 0 !important;
+  }
+
+  .pf-contenedor > h1 {
+    font-size: 21px;
+  }
+
+  .pf-dos-columnas {
+    grid-template-columns: 1fr;
+  }
+
+  .pf-navbar {
+    padding: 10px;
+  }
+
+  .pf-nav-derecha {
+    gap: 5px;
+  }
+}

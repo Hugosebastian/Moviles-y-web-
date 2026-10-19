@@ -1,0 +1,99 @@
+/* Panel de administrador: estilos independientes de la barra superior. */
+.cvadmin-pagina, .cvadmin-pagina * { box-sizing: border-box; }
+.cvadmin-pagina {
+  min-height: calc(100vh - 80px);
+  padding: 28px 18px 65px;
+  background: #f5f6f8;
+  color: #27313e;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.cvadmin-contenedor { max-width: 1260px; margin: 0 auto; }
+.cvadmin-encabezado {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; flex-wrap: wrap; margin-bottom: 22px;
+}
+.cvadmin-eyebrow { color: #e45c00; font-size: 12px; font-weight: 800; }
+.cvadmin-encabezado h1 { margin: 8px 0; font-size: clamp(25px, 3.5vw, 34px); }
+.cvadmin-encabezado p, .cvadmin-descripcion { margin: 0; color: #778392; font-size: 13px; line-height: 1.6; }
+.cvadmin-navegacion {
+  display: flex; flex-wrap: wrap; gap: 8px; padding: 12px;
+  margin-bottom: 20px; background: #fff; border: 1px solid #e7ebef; border-radius: 14px;
+}
+.cvadmin-navegacion button {
+  border: 1px solid transparent; border-radius: 9px; padding: 11px 13px;
+  background: transparent; color: #566170; font-size: 13px;
+  font-weight: 750; cursor: pointer; display: inline-flex; align-items: center; gap: 7px;
+}
+.cvadmin-navegacion button:hover { background: #fff2e9; }
+.cvadmin-navegacion button.activo { color: #fff; background: #ff6600; }
+.cvadmin-contador {
+  display: inline-grid; place-items: center; min-width: 22px; height: 22px;
+  padding: 0 5px; border-radius: 20px; color: #fff; background: #d93636; font-size: 11px;
+}
+.cvadmin-estadisticas { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 15px; margin-bottom: 20px; }
+.cvadmin-estadistica {
+  display: flex; flex-direction: column; align-items: flex-start; gap: 9px;
+  padding: 22px; border: 1px solid #e5eaf0; border-radius: 14px;
+  background: #fff; text-align: left; cursor: pointer;
+}
+.cvadmin-estadistica > span { font-size: 26px; }
+.cvadmin-estadistica small { color: #687587; font-size: 13px; }
+.cvadmin-estadistica strong { font-size: 32px; color: #ff6600; }
+.cvadmin-tarjeta {
+  padding: 24px; margin-bottom: 20px; border: 1px solid #e6ebf0;
+  border-radius: 15px; background: #fff;
+}
+.cvadmin-tarjeta h1, .cvadmin-tarjeta h2 { margin: 0 0 15px; }
+.cvadmin-aviso { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+.cvadmin-aviso p { color: #6f7c8c; font-size: 13px; line-height: 1.6; }
+.cvadmin-boton {
+  border: 1px solid #ff6600; border-radius: 9px; padding: 10px 13px;
+  color: #fff; background: #ff6600; font-size: 12px; font-weight: 800;
+  cursor: pointer; white-space: nowrap;
+}
+.cvadmin-boton:hover { filter: brightness(.95); }
+.cvadmin-boton-claro { background: #fff; color: #455363; border-color: #d7dee7; }
+.cvadmin-peligro { background: #fff0f0; color: #b42331; border-color: #f1c5ca; }
+.cvadmin-mensaje {
+  padding: 13px 16px; margin: 0 0 18px; border-radius: 10px;
+  color: #38506b; background: #eef5fc; font-size: 13px; font-weight: 650;
+}
+.cvadmin-solicitudes { display: grid; gap: 12px; margin-top: 18px; }
+.cvadmin-solicitud {
+  display: flex; align-items: center; justify-content: space-between;
+  flex-wrap: wrap; gap: 16px; padding: 18px;
+  border: 1px solid #e8ebef; border-radius: 12px;
+}
+.cvadmin-solicitud h3 { margin: 0 0 7px; font-size: 16px; }
+.cvadmin-solicitud p { margin: 0 0 10px; color: #758190; font-size: 12px; }
+.cvadmin-roles { display: flex; gap: 5px; flex-wrap: wrap; }
+.cvadmin-roles span {
+  padding: 5px 8px; border-radius: 20px; background: #edf1f5;
+  color: #536071; font-size: 11px; font-weight: 750;
+}
+.cvadmin-roles span.cvadmin-pendiente { background: #fff0e5; color: #d45700; }
+.cvadmin-acciones { display: flex; flex-wrap: wrap; gap: 8px; }
+.cvadmin-busqueda {
+  display: block; width: min(100%, 420px); margin-bottom: 18px;
+  border: 1px solid #dce3eb; border-radius: 10px;
+  padding: 12px; color: #27313e; font: inherit; font-size: 13px;
+}
+.cvadmin-tabla-scroll { width: 100%; overflow-x: auto; }
+.cvadmin-tabla { width: 100%; min-width: 740px; border-collapse: collapse; font-size: 13px; }
+.cvadmin-tabla th, .cvadmin-tabla td { padding: 14px 11px; border-bottom: 1px solid #e9edf1; text-align: left; vertical-align: middle; }
+.cvadmin-tabla th { background: #f8f9fb; color: #697687; font-weight: 800; }
+.cvadmin-tabla td strong { display: block; margin-bottom: 4px; }
+.cvadmin-tabla td small { display: block; color: #8792a0; margin-top: 3px; }
+.cvadmin-tabla input { min-width: 100px; max-width: 220px; width: 100%; padding: 9px; border: 1px solid #d6dee8; border-radius: 7px; }
+.cvadmin-enlace { background: none; border: 0; padding: 0; color: #e45c00; font: inherit; font-weight: 800; cursor: pointer; }
+.cvadmin-vacio { padding: 32px 15px; text-align: center; color: #778392; background: #f9fafb; border-radius: 10px; }
+@media (max-width: 950px) { .cvadmin-estadisticas { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) {
+  .cvadmin-pagina { padding: 16px 10px 45px; }
+  .cvadmin-tarjeta { padding: 16px; }
+  .cvadmin-estadisticas { gap: 9px; }
+  .cvadmin-estadistica { padding: 15px; }
+  .cvadmin-estadistica strong { font-size: 27px; }
+  .cvadmin-navegacion { gap: 4px; padding: 7px; }
+  .cvadmin-navegacion button { padding: 9px 10px; font-size: 12px; }
+}
